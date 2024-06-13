@@ -1,4 +1,12 @@
+# .gitignore
 *.pyc
 __pycache__/
+db.sqlite3
 .env
+venv/
+*.log
 .DS_Store
+*.pot
+*.po
+*.mo
+postgres_data/
