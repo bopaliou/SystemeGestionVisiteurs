@@ -5,7 +5,15 @@ FROM python:3.12
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        git-core \
+        build-essential \
+        binutils \
+        libproj-dev \
+        gdal-bin \
+        supervisor && \
+    rm -rf /var/lib/apt/lists/*
 # Créez et définissez le répertoire de travail dans le conteneur Docker
 WORKDIR /app
 
